@@ -5,10 +5,6 @@ class random_walk(functions):
     def __init__(self):
         functions.__init__(self)
 
-    def loop(self):
-        for _ in range(self.init_value.total_steps):
-            self.function_loop()
-
     def end(self):
         print("Recording")
         self.end_of_loop()

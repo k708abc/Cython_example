@@ -34,6 +34,10 @@ class functions:
         self.down = self.down / total + self.left
         self.right = self.right / total + self.down
 
+    def loop(self):
+        for _ in range(self.init_value.total_steps):
+            self.function_loop()
+
     def function_loop(self):
         self.direction = choice_event(self.up, self.left, self.down)
         self.direction_record()
@@ -80,5 +84,5 @@ class functions:
         self.elapsed_time = time.time() - self.start_time
         self.minute = math.floor(self.elapsed_time / 60)
         self.second = int(self.elapsed_time % 60)
-        record_data(self.pos_rec)
+        record_data(self.pos_rec, self.minute, self.second)
         print(self.dir_rec)

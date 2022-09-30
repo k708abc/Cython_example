@@ -8,7 +8,6 @@ class random_walk(functions):
     def end(self):
         print("Recording")
         self.end_of_loop()
-        print("Finished: " + str(self.minute) + " min " + str(self.second) + " sec")
 
     def start(self):
         print("Calculation start")

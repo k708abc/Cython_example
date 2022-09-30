@@ -86,3 +86,4 @@ class functions:
         self.second = int(self.elapsed_time % 60)
         record_data(self.pos_rec, self.minute, self.second)
         print(self.dir_rec)
+        print("Finished: " + str(self.minute) + " min " + str(self.second) + " sec")

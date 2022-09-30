@@ -1,3 +1,5 @@
+# cython: language_level=3, boundscheck=False, wraparound=False
+
 import seaborn as sns
 import matplotlib.pyplot as plt
 

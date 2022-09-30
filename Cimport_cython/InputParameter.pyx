@@ -1,7 +1,8 @@
-﻿import yaml
+﻿# cython: language_level=3, boundscheck=False, wraparound=False
 
+import yaml
 
-class Params:
+cdef class Params:
     def __init__(self, filename):
         if filename:
             with open(filename) as f:

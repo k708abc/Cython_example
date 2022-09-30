@@ -1,20 +1,14 @@
-from InputParameter import Params
+# cython: language_level=3, boundscheck=False, wraparound=False
+
+from InputParameter cimport Params
 import time
-from sub_functions import pos_rec_lattice, choice_event
-from recording import record_data
+from sub_functions cimport pos_rec_lattice, choice_event
+from recording cimport record_data
 import os
 import math
 
 
 cdef class functions:
-    cdef int cell_size, count, output_count
-    cdef double start_time, up, left, down, right, minute, second, elapsed_time
-    cdef list dir_rec
-    cdef list direction
-    cdef list current_position
-    cdef list pos_rec
-
-
     def __init__(self):
         self.init_value = Params("input.yml")
         self.cell_size = self.init_value.cell_size_xy

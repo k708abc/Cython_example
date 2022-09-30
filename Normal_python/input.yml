@@ -1,0 +1,9 @@
+cell_size_xy: 100
+probabilities:
+  up: 0.2
+  left: 1.0
+  down: 1.0
+  right: 1.0
+total_steps: 100000000
+print_per: 10000000
+

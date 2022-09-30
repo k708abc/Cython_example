@@ -1,10 +1,9 @@
 from InputParameter import Params
 import time
-from sub_functions import pos_rec_lattice
+from sub_functions import pos_rec_lattice, choice_event
 from recording import record_data
 import os
 import math
-import random
 
 
 class functions:
@@ -13,6 +12,7 @@ class functions:
         self.cell_size = self.init_value.cell_size_xy
         self.count = 0
         self.output_count = self.init_value.print_per
+        self.dir_rec = [0, 0, 0, 0, 0]
 
     def start_setting(self):
         self.direction = [0, 0]
@@ -35,19 +35,8 @@ class functions:
         self.right = self.right / total + self.down
 
     def function_loop(self):
-        random_val = random.random()
-        if random_val <= self.up:
-            self.direction[0] = 0
-            self.direction[1] = 1
-        elif random_val <= self.left:
-            self.direction[0] = -1
-            self.direction[1] = 0
-        elif random_val <= self.down:
-            self.direction[0] = 0
-            self.direction[1] = -1
-        else:
-            self.direction[0] = 1
-            self.direction[1] = 0
+        self.direction = choice_event(self.up, self.left, self.down)
+        self.direction_record()
         self.update_events()
         self.record_position()
         self.count += 1
@@ -55,6 +44,18 @@ class functions:
             percentage = self.count / self.init_value.total_steps * 100
             print(f"Progress: {percentage:.2f} %")
             self.output_count += self.init_value.print_per
+
+    def direction_record(self):
+        if self.direction == [0, -1]:
+            self.dir_rec[0] += 1
+        elif self.direction == [-1, 0]:
+            self.dir_rec[1] += 1
+        elif self.direction == [0, 1]:
+            self.dir_rec[2] += 1
+        elif self.direction == [1, 0]:
+            self.dir_rec[3] += 1
+        else:
+            self.dir_rec[4] += 1
 
     def update_events(self):
         self.current_position[0] = self.boundary_check(
@@ -80,3 +81,4 @@ class functions:
         self.minute = math.floor(self.elapsed_time / 60)
         self.second = int(self.elapsed_time % 60)
         record_data(self.pos_rec)
+        print(self.dir_rec)

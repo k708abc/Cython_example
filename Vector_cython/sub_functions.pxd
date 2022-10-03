@@ -1,4 +1,7 @@
+# distutils: language = c++
 # cython: language_level=3, boundscheck=False, wraparound=False
 
-cpdef list pos_rec_lattice(int cell_size)
-cpdef list choice_event(double up, double left, double down)
+from libcpp.vector cimport vector
+
+cdef vector[vector[int]] pos_rec_lattice(int cell_size)
+cdef vector[int] choice_event(double up, double left, double down)

@@ -1,4 +1,5 @@
-﻿# cython: language_level=3, boundscheck=False, wraparound=False
+﻿# distutils: language = c++
+# cython: language_level=3, boundscheck=False, wraparound=False
 
 import yaml
 

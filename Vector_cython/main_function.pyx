@@ -1,3 +1,4 @@
+# distutils: language = c++
 # cython: language_level=3, boundscheck=False, wraparound=False
 
 from InputParameter cimport Params
@@ -5,8 +6,7 @@ import time
 from sub_functions cimport pos_rec_lattice, choice_event
 from recording cimport record_data
 import os
-import math
-
+from libcpp.vector cimport vector
 
 cdef class functions:
     def __init__(self):
@@ -87,7 +87,7 @@ cdef class functions:
 
     cpdef end_of_loop(self):
         self.elapsed_time = time.time() - self.start_time
-        self.minute = math.floor(self.elapsed_time / 60)
+        self.minute = int(self.elapsed_time / 60)
         self.second = int(self.elapsed_time % 60)
         record_data(self.pos_rec, self.minute, self.second)
         print(self.dir_rec)

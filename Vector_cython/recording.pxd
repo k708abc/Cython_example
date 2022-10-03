@@ -1,3 +1,5 @@
+# distutils: language = c++
 # cython: language_level=3, boundscheck=False, wraparound=False
+from libcpp.vector cimport vector
 
-cpdef record_data(pos_rec, minute, second)
+cdef record_data(vector[vector[int]] pos_rec, int minute, int second)

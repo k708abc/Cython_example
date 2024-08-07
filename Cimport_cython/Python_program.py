@@ -1,3 +1,4 @@
+#!python3.12
 from main_function import functions
 
 

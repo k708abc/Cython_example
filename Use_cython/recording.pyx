@@ -1,3 +1,5 @@
+#!python3.12
+
 import seaborn as sns
 import matplotlib.pyplot as plt
 

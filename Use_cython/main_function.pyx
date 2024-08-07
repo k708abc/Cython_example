@@ -1,3 +1,5 @@
+#!python3.12
+
 from InputParameter import Params
 import time
 from sub_functions import pos_rec_lattice, choice_event

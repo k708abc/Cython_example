@@ -25,3 +25,7 @@ ext_modules = [
 ]
 setup(ext_modules=cythonize(ext_modules, annotate=True))
 #
+ext_modules = [
+    Extension("Python_program", ["Python_program.pyx"]),
+]
+setup(ext_modules=cythonize(ext_modules, annotate=True))

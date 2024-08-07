@@ -9,8 +9,8 @@ import math
 
 
 cdef class functions:
-    cdef int cell_size, count, output_count
-    cdef double start_time, up, left, down, right, minute, second, elapsed_time
+    cdef int cell_size, count, output_count, minute, second
+    cdef double start_time, up, left, down, right, elapsed_time
     cdef list dir_rec
     cdef list direction
     cdef list current_position

@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-cdef record_data(pos_rec, minute, second):
+cdef record_data(list pos_rec, int minute, int second):
     plt.figure()
     sns.heatmap(pos_rec)
     plt.savefig("Record/heat_map.png")

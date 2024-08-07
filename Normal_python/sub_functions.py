@@ -1,3 +1,5 @@
+#!python3.12
+
 import random
 
 

@@ -1,4 +1,5 @@
-﻿import yaml
+﻿#!python3.12
+import yaml
 
 
 class Params:

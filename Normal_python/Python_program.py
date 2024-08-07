@@ -1,3 +1,4 @@
+#!python3.12
 from main_function import functions
 
 
@@ -18,5 +19,8 @@ class random_walk(functions):
 
 
 if __name__ == "__main__":
+    """"
+    Trying random work by normal Python code
+    """
     rw_class = random_walk()
     rw_class.start()

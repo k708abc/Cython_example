@@ -1,4 +1,5 @@
-﻿# cython: language_level=3, boundscheck=False, wraparound=False
+﻿#!python3.12
+# cython: language_level=3, boundscheck=False, wraparound=False
 
 import yaml
 
